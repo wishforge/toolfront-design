@@ -1,0 +1,92 @@
+/*
+ * ToolFront Design Tokens — single source of truth
+ * Source: extracted from toolfront/public/index.html :root block
+ * Spec:   see design-system.md (same repo)
+ * Fonts:  see fonts/fonts.css
+ *
+ * Consumers include this file (or its generated TS copy) and MUST NOT
+ * redefine any of these variables locally. Changes go here first,
+ * then propagate via git submodule update + sync script.
+ */
+  :root {
+    /* ── Colors (refined) ── */
+    --paper: #FAFBFC;
+    --paper-soft: #F1F4F8;
+    --paper-warm: #FFFDF9;
+    --ink: #0C1222;
+    --ink-2: #374151;
+    --ink-3: #6B7280;
+    --ink-4: #9CA3AF;
+    --ink-5: #D1D5DB;
+    --line: #E2E6EE;
+    --line-light: #F0F2F5;
+
+    /* Accent: refined blue */
+    --accent: #2563EB;
+    --accent-deep: #1D4ED8;
+    --accent-soft: #EFF6FF;
+    --accent-glow: rgba(37,99,235,0.12);
+
+    /* Semantic colors */
+    --good: #059669;
+    --good-deep: #047857;
+    --good-soft: #ECFDF5;
+    --mid: #D97706;
+    --mid-soft: #FFFBEB;
+    --bad: #DC2626;
+    --bad-soft: #FEF2F2;
+    --info: #0891B2;
+    --info-soft: #ECFEFF;
+
+    /* Surfaces */
+    --card: #FFFFFF;
+    --surface-dark: #0F172A;
+
+    /* Shadows (layered) */
+    --shadow-xs: 0 1px 2px rgba(12,18,34,0.04);
+    --shadow-sm: 0 2px 8px -2px rgba(12,18,34,0.06), 0 1px 3px rgba(12,18,34,0.04);
+    --shadow-md: 0 4px 16px -4px rgba(12,18,34,0.08), 0 2px 6px -2px rgba(12,18,34,0.04);
+    --shadow-lg: 0 10px 40px -8px rgba(12,18,34,0.12), 0 4px 12px -4px rgba(12,18,34,0.06);
+    --shadow-xl: 0 20px 60px -12px rgba(12,18,34,0.18), 0 8px 24px -6px rgba(12,18,34,0.08);
+    --shadow-report: 0 24px 56px -16px rgba(12,18,34,.22), 0 0 0 1px rgba(12,18,34,.04), inset 0 1px 0 rgba(255,255,255,.6);
+    --shadow-glow-accent: 0 0 20px -4px var(--accent-glow), 0 0 40px -8px rgba(37,99,235,0.06);
+    --shadow-popular: 0 8px 32px -4px rgba(37,99,235,0.18), 0 0 0 1px rgba(37,99,235,0.15);
+
+    /* Kiro-inspired: report card glow border */
+    --shadow-report-glow:
+      0 0 0 1px rgba(37,99,235,0.08),
+      0 0 20px -2px rgba(37,99,235,0.10),
+      0 0 48px -8px rgba(37,99,235,0.06),
+      0 24px 56px -16px rgba(12,18,34,.22);
+    --shadow-report-glow-hover:
+      0 0 0 1px rgba(37,99,235,0.16),
+      0 0 28px -2px rgba(37,99,235,0.15),
+      0 0 60px -8px rgba(37,99,235,0.10),
+      0 24px 64px -12px rgba(12,18,34,.26);
+
+    /* Kiro-inspired: gradient buttons */
+    --grad-primary: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%);
+    --grad-primary-hover: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 50%, #2563EB 100%);
+    --grad-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    --grad-dark-hover: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+
+    /* Radius (4px grid) */
+    --r-1: 4px;
+    --r-2: 8px;
+    --r-3: 12px;
+    --r-4: 16px;
+    --r-5: 20px;
+    --r-full: 9999px;
+
+    /* Type scale */
+    --sans: "Space Grotesk", "Noto Sans SC", sans-serif;
+    --serif: "Source Serif 4", "Noto Serif SC", serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, "Cascadia Code", monospace;
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast: 150ms;
+    --dur-normal: 250ms;
+    --dur-slow: 400ms;
+  }

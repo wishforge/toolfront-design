@@ -1,0 +1,44 @@
+# toolfront-design
+
+Shared design system for all ToolFront projects. Single source of truth —
+consumer projects reference this repo as a git submodule and MUST NOT
+redefine tokens or fonts locally.
+
+## Contents
+
+```
+toolfront-design/
+├── design-system.md   Full V5 design spec (versioned in file header, not filename)
+├── tokens/
+│   └── tokens.css     :root design tokens (colors, shadows, gradients, radius,
+│                      type, motion). Extracted from toolfront's index.html.
+└── fonts/
+    ├── fonts.css      @font-face declarations (absolute paths: /fonts/*.woff2)
+    ├── *.woff2        17 self-hosted font files (SIL OFL 1.1)
+    └── OFL-*.txt      Font licenses — must ship with the fonts
+```
+
+## Contract for consumers
+
+1. Add as a git submodule: `git submodule add <repo-url> design`
+2. Run the project's `sync-design` script (see each project's scripts/) which:
+   - Copies `design/fonts/*.woff2` into the project's static serving dir so
+     files are reachable at `/fonts/*` (fonts.css uses absolute paths)
+   - For Workers that render HTML strings: generates a TS module from
+     `design/tokens/tokens.css` (e.g. `src/design-tokens.ts`)
+3. Never edit generated/copied files. Never redefine `--paper`, `--ink`,
+   `--accent`, etc. in project CSS.
+
+## Changing the design
+
+All token/font changes happen HERE first:
+
+1. Edit `tokens/tokens.css` or `fonts/` in this repo, update `design-system.md`
+2. Commit + tag (e.g. `v5.1`)
+3. In each consumer: `git submodule update --remote design` + run sync + commit
+   the submodule pointer bump
+
+## License
+
+Fonts: SIL Open Font License 1.1 (see fonts/OFL-*.txt). Design tokens/spec:
+same license as the ToolFront project (Apache-2.0).
