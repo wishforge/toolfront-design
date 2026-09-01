@@ -1,0 +1,21 @@
+{
+  "name": "toolfront-design",
+  "version": "1.0.0",
+  "description": "Shared ToolFront design system: tokens (JSON source + Style Dictionary build), self-hosted fonts, spec.",
+  "scripts": {
+    "build": "style-dictionary build --config sd.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wishforge/toolfront-design.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wishforge/toolfront-design/issues"
+  },
+  "homepage": "https://github.com/wishforge/toolfront-design#readme",
+  "devDependencies": {
+    "style-dictionary": "^5.5.2"
+  },
+  "private": true
+}
